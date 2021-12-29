@@ -1,0 +1,24 @@
+/*!****************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/client/style.scss ***!
+  \****************************************************************************************************************/
+.dick {
+  display: flex;
+  width: 600px;
+  height: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.dick .dick__form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dick .dick__form .dick_form__input {
+  border-radius: 5px;
+  margin-right: 2px;
+  border-color: #6e6e6e;
+}
+.dick .dick__form .dick_form__button {
+  border-radius: 3px;
+  color: #6e6e6e;
+}

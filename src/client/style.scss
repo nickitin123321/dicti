@@ -1,0 +1,48 @@
+.dic {
+  display: flex;
+  width: 600px;
+  height: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  flex-direction: column;
+
+  .dic__list {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 800px;
+    overflow-y: scroll;
+    border-style: solid;
+
+    .dic_list__row {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+    
+    .dic_list__cell {
+      padding-left: 100px;
+      padding-right: 100px;
+    }
+  }
+
+  .dic__form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4px;
+
+    .dic_form__input {
+      border-radius: 5px;
+      margin-right: 2px;
+      border-color: #6e6e6e;
+      width: 50%;
+    }
+
+    .dic_form__button {
+      border-radius: 3px;
+      color: #6e6e6e;
+      width: 50px;
+    }
+  }
+}
