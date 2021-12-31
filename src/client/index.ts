@@ -2,8 +2,20 @@ import './style.scss';
 
 import { getRandomInt } from './utils';
 
+type Language = 'ru' | 'eng';
+
 const arrEng = JSON.parse(localStorage.getItem('arrEng')) as string[];
 const arrRu = JSON.parse(localStorage.getItem('arrRu')) as string[];
+const counter = localStorage.getItem('counter') as string;
+
+const initCounter = () => {
+  if (counter) {
+    const counterElement = document.querySelector('.dic__counter');
+    counterElement.textContent = counter;
+  } else {
+    localStorage.setItem('counter', '0');
+  }
+};
 
 const initLocalArrs = () => {
   localStorage.setItem('arrEng', JSON.stringify([]));
@@ -22,7 +34,7 @@ const initList = () => {
   }
 };
 
-const getTranslate = (language: 'ru' | 'eng', wordIndex: number): string => {
+const getTranslate = (language: Language, wordIndex: number): string => {
   if (language === 'ru') {
     return arrEng[wordIndex];
   } else {
@@ -32,11 +44,11 @@ const getTranslate = (language: 'ru' | 'eng', wordIndex: number): string => {
 
 const getRandomWord = (): {
   word: string;
-  language: 'ru' | 'eng';
+  language: Language;
   wordIndex: number;
 } => {
   let word = '';
-  let language = 'ru' as 'ru' | 'eng';
+  let language = 'ru' as Language;
   const wordIndex = getRandomInt(arrEng.length);
 
   if (getRandomInt(2) === 1) {
@@ -44,7 +56,6 @@ const getRandomWord = (): {
     language = 'eng';
   } else {
     word = arrRu[wordIndex];
-    language = 'ru';
   }
   return {
     word,
@@ -78,11 +89,18 @@ const initTestList = () => {
   });
 
   okButton.addEventListener('click', () => {
+    const counterElement = document.querySelector('.dic__counter');
+    const count = localStorage.getItem('counter');
+    let scores = '';
     if (wordInput.value === getTranslate(language, wordIndex)) {
-      console.log('угадал');
+      scores = String(+count + 1);
     } else {
-      console.log('не угадал');
+      scores = String(+count - 1);
     }
+
+    console.log(scores, counter);
+    localStorage.setItem('counter', scores);
+    counterElement.textContent = scores;
   });
 
   row.appendChild(wordElement);
@@ -194,6 +212,7 @@ const addRow = (evt: Event): void => {
 
 const initWindow = () => {
   initList();
+  initCounter();
 
   const addButton = document.querySelector('.dic_form__button--add');
   const testButton = document.querySelector('.dic_form__button--test');

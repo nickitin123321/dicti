@@ -1,86 +1,128 @@
 .dic {
-  width: 600px;
-  height: 800px;
-  margin-left: auto;
-  margin-right: auto;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  display: flex;
 
-  .dic__list {
+  .dic__counter-container {
     display: flex;
-    flex-direction: column;
-    height: 780px;
-    overflow-y: scroll;
-    border-style: solid;
-    border-color: #6e6e6e;
-    border-width: 1px 5px 1px 5px;
-    overflow-y: scroll;
-    padding: 10px;
-    border-radius: 5px;
     align-items: center;
+    justify-content: center;
+    width: 33%;
+    height: 800px;
+  }
 
-    .dic_list__word-row {
+  .dic__counter {
+    font-size: 140px;
+  }
+
+  .dic__app {
+    width: 33%;
+    height: 800px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+    .dic__list {
+      height: 750px;
+      display: flex;
+      flex-direction: column;
+      overflow-y: scroll;
+      border-style: solid;
+      border-color: #6e6e6e;
+      border-width: 5px;
+      overflow-y: scroll;
+      padding: 10px;
+      border-radius: 5px;
+      align-items: center;
+
+      .dic_list__word-input {
+        margin-left: 10px;
+      }
+
+      .dic_list__word-row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .dic_list__row {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 6px;
+        padding: 4px;
+        border-style: solid;
+        border-radius: 10px;
+        border-width: 1px;
+
+        .dic_list__cell {
+        }
+
+        .dic_list__button {
+          display: flex;
+          justify-content: center;
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          color: #6e6e6e;
+        }
+      }
+    }
+
+    .dic__list::-webkit-scrollbar {
+      width: 0;
+    }
+
+    .dic__form {
       display: flex;
       justify-content: center;
       align-items: center;
-    }
+      margin-top: 20px;
+      margin-bottom: 5px;
 
-    .dic_list__row {
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 6px;
-      padding: 4px;
-      border-style: solid;
-      border-radius: 10px;
-      border-width: 1px;
-
-      .dic_list__cell {
+      .dic_form__item {
+        position: relative;
+        width: 50%;
       }
 
-      .dic_list__button {
-        display: flex;
-        justify-content: center;
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
+      .dic_form__input {
+        border-radius: 5px;
+        margin-right: 2px;
+        border-color: #6e6e6e;
+        border-width: 1px;
+        height: 25px;
+        width: 95%;
+        margin-left: 5px;
+      }
+
+      .dic_form__label {
+        position: absolute;
+        color: #999;
+        font-size: 13px;
+        line-height: 13px;
+        top: 5px;
+        left: 10px;
+        pointer-events: none;
+      }
+
+      .dic_form__input:focus + .dic_form__label,
+      .dic_form__input:not(:placeholder-shown) + .dic_form__label {
+        transition: 0.3s;
+        top: -19px;
+        font-size: 9px;
+      }
+
+      .dic_form__button {
+        border-radius: 5px;
         color: #6e6e6e;
+        width: 50px;
+        height: 30px;
+        margin-left: 3px;
       }
     }
-  }
 
-  .dic__list::-webkit-scrollbar {
-    width: 0;
-  }
-
-  .dic__form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 5px;
-
-    .dic_form__input {
-      border-radius: 5px;
-      margin-right: 2px;
-      border-color: #6e6e6e;
-      border-width: 1px;
-      width: 50%;
+    .dic_form__button--test {
+      width: 100%;
       height: 25px;
-      margin-left: 5px;
+      border-radius: 10px;
+      margin-top: 5px;
     }
-
-    .dic_form__button {
-      border-radius: 5px;
-      color: #6e6e6e;
-      width: 50px;
-      height: 30px;
-      margin-left: 3px;
-    }
-  }
-  .dic_form__button--test {
-    width: 100%;
-    height: 25px;
-    border-radius: 10px;
-    margin-top: 5px;
   }
 }
