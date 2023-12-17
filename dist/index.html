@@ -2,16 +2,29 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <title>Dicki</title>
+        <title>Dici</title>
     <script defer src="main.js"></script><link href="main.css" rel="stylesheet"></head>
     <body>
-        <main class="dick">
-          <div class="dick__list"></div>
-          <form class="dick__form">
-            <input class="dick_form__input dick_form__input--eng" type="text">
-            <input class="dick_form__input dick_form__input--ru" type="text">
-            <button class="dick_form__button">OK</button>
-          </form>
+        <main class="dic">
+          <div class="dic__counter-container">
+            <span>SCORES</span>
+            <span class="dic__counter"></span>
+          </div>
+          <div class="dic__app">
+            <div class="dic__list"></div>
+            <form class="dic__form">
+              <div class ="dic_form__item">
+                <input class="dic_form__input dic_form__input--eng" name="eng" placeholder=" " type="text">
+                <label class="dic_form__label" for="eng">Eng</label>
+              </div>
+              <div class ="dic_form__item">
+                <input class="dic_form__input dic_form__input--ru" name="ru" placeholder=" " type="text">
+                <label class="dic_form__label" ru="login">Ru</label>
+              </div>
+              <button class="dic_form__button dic_form__button--add">OK</button>
+            </form>
+            <button class="dic_form__button dic_form__button--test">TEST</button>
+        </div>
         </main>
     </body>
     

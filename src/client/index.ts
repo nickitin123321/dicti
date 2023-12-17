@@ -48,7 +48,7 @@ const getRandomWord = (): {
   wordIndex: number;
 } => {
   let word = '';
-  let language = 'ru' as Language;
+  let language: Language = 'ru';
   const wordIndex = getRandomInt(arrEng.length);
 
   if (getRandomInt(2) === 1) {

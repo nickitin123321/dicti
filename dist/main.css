@@ -1,24 +1,128 @@
 /*!****************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/client/style.scss ***!
   \****************************************************************************************************************/
-.dick {
+.dic {
   display: flex;
-  width: 600px;
-  height: 600px;
-  margin-left: auto;
-  margin-right: auto;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-.dick .dick__form {
+.dic .dic__counter-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 33%;
+  height: 800px;
+}
+.dic .dic__counter {
+  margin-top: 20px;
+  padding: 10px 30px;
+  border: solid 2px;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  box-shadow: 0 0 10pt #727272;
+  font-size: 140px;
+}
+.dic .dic__app {
+  width: 33%;
+  height: 800px;
+}
+.dic .dic__app .dic__list {
+  height: 750px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  border: solid 2px gray;
+  box-shadow: 0 0 10pt #727272;
+  overflow-y: scroll;
+  padding: 10px;
+  border-radius: 5px;
+  align-items: center;
+}
+.dic .dic__app .dic__list .dic_list__word-input {
+  margin-left: 10px;
+}
+.dic .dic__app .dic__list .dic_list__word-row {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.dick .dick__form .dick_form__input {
+.dic .dic__app .dic__list .dic_list__row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+  padding-bottom: 2px;
+  border-bottom: solid 2px;
+}
+.dic .dic__app .dic__list .dic_list__row .dic_list__button {
+  display: flex;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  color: #000;
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+.dic .dic__app .dic__list::-webkit-scrollbar {
+  width: 0;
+}
+.dic .dic__app .dic__form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+.dic .dic__app .dic__form .dic_form__item {
+  position: relative;
+  width: 50%;
+}
+.dic .dic__app .dic__form .dic_form__input {
   border-radius: 5px;
   margin-right: 2px;
   border-color: #6e6e6e;
+  border-width: 1px;
+  height: 25px;
+  width: 95%;
+  margin-left: 5px;
+  box-shadow: 0 0 4px #727272;
 }
-.dick .dick__form .dick_form__button {
-  border-radius: 3px;
-  color: #6e6e6e;
+.dic .dic__app .dic__form .dic_form__label {
+  position: absolute;
+  color: #000;
+  font-size: 13px;
+  line-height: 13px;
+  top: 5px;
+  left: 10px;
+  pointer-events: none;
+}
+.dic .dic__app .dic__form .dic_form__input:focus + .dic_form__label,
+.dic .dic__app .dic__form .dic_form__input:not(:placeholder-shown) + .dic_form__label {
+  transition: 0.3s;
+  top: -19px;
+  font-size: 9px;
+}
+.dic .dic__app .dic__form .dic_form__button {
+  border-radius: 5px;
+  color: #000;
+  width: 50px;
+  height: 30px;
+  margin-left: 3px;
+  border: solid 2px gray;
+  background-color: #fff;
+  box-shadow: 0 0 4px #727272;
+  cursor: pointer;
+}
+.dic .dic__app .dic_form__button--test {
+  width: 100%;
+  height: 28px;
+  border-radius: 10px;
+  margin-top: 5px;
+  color: #000;
+  border: solid 2px gray;
+  background-color: #fff;
+  box-shadow: 0 0 4px #727272;
+  cursor: pointer;
 }
